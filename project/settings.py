@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'celeryapp',
     'django_celery_results',
+    'django_celery_beat',
 ]
 
 MIDDLEWARE = [
@@ -137,3 +138,7 @@ CELERY_TASK_SERIALIZER='json'
 #for storing result
 
 CELERY_RESULT_BACKEND = "django-db"
+
+#celery beat settings
+
+CELERY_BEAT_SCHEDULER='django_celery_beat.schedulers:DatabaseScheduler'
